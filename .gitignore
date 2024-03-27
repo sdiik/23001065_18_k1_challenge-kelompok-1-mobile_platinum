@@ -2,8 +2,6 @@
 
 bin
 
-Reports
-
 Libs
 
 output
@@ -15,4 +13,16 @@ build
 
 .project
 
+.prj
+
+.settings
+
+settings
+
+.cache
+
+*.gradle
+
 *.log
+
+console.properties
