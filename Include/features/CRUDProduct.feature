@@ -22,3 +22,15 @@ Feature: CRUD Product Mobile
     Given user has opened jual page
     When user input valid credential in all required fields except upload picture and click terbitkan button in selling page
     Then user will fail create product
+
+  @positive
+  Scenario: TC.MOBILE.14-User can edit product
+    Given user has opened edit product page
+    When user edit valid credential in all required fields an click Perbarui produk button in edit product page
+    Then user will successfully edit product in edit product page
+
+  @negative
+  Scenario: TC.MOBILE.15-User edit nama produk field with empty value
+    Given user has opened edit product page
+    When user edit nama produk field with empty value and click Terbitkan button in edit product page
+    Then user will fail save edit product in edit product page

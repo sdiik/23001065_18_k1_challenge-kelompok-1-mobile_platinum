@@ -111,6 +111,66 @@ class CRUDProduct {
 		AppiumDriver<?> driver = MobileDriverFactory.getDriver()
 		driver.findElementByXPath("//android.widget.Toast[@text='Silahkan masukkan foto produk terlebih dahulu.']")
 	}
+	//user can successfully edit product
+	@Given("user has opened edit product page")
+	public void user_has_opened_edit_product_page() {
+		Mobile.tap(findTestObject('Object Repository/Dashboard/btn_akun'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/AkunMenu/btn_daftarJualSaya'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/AkunMenu/btn_daftarJualSaya'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/AkunMenu/btn_edit'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/AkunMenu/btn_edit'), 0)
+		Mobile.tap(findTestObject('Object Repository/AkunMenu/btn_daftarJualSaya'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Daftar Jual Saya/txt_diminati'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Daftar Jual Saya/txt_diminati'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Daftar Jual Saya/txt_terjual'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Daftar Jual Saya/txt_terjual'), 0)
+		Mobile.tap(findTestObject('Object Repository/Daftar Jual Saya/btn_productCard2'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Edit Product Page/btn_perbaruiProduk'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Edit Product Page/btn_perbaruiProduk'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Edit Product Page/textbox_deskripsi'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Edit Product Page/textbox_deskripsi'), 0)
+	}
+
+	@When("user edit valid credential in all required fields an click Perbarui produk button in edit product page")
+	public void user_edit_valid_credential_in_all_required_fields_an_click_Perbarui_produk_button_in_edit_product_page() {
+		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_namaProduk'), 'godzilla', 0)
+		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_hargaProduk'), '3000', 0)
+		Mobile.hideKeyboard()
+		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_lokasi'), 'jakarta', 0)
+		Mobile.hideKeyboard()
+		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_deskripsi'), 'godzilla gemoy', 0)
+		Mobile.hideKeyboard()
+		Mobile.tap(findTestObject('Object Repository/Post Product Page/btn_img'), 0)
+		Mobile.tap(findTestObject('Object Repository/Post Product Page/btn_galeri'), 0)
+		Mobile.tap(findTestObject('Object Repository/Post Product Page/img_fotoProduk'), 0)
+		Mobile.tap(findTestObject('Object Repository/Edit Product Page/btn_perbaruiProduk'), 0)
+	}
+
+	@Then("user will successfully edit product in edit product page")
+	public void user_will_successfully_edit_product_in_edit_product_page() {
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Daftar Jual Saya/txt_messageCRUD'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Daftar Jual Saya/txt_messageCRUD'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Daftar Jual Saya/txt_terjual'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Daftar Jual Saya/txt_terjual'), 0)
+	}
+	//user edit nama produk field with empty value
+	@When("user edit nama produk field with empty value and click Terbitkan button in edit product page")
+	public void user_edit_nama_produk_field_with_empty_value_and_click_Terbitkan_button_in_edit_product_page() {
+		Mobile.clearText(findTestObject('Object Repository/Edit Product Page/textbox_namaProduk'), 0)
+		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_hargaProduk'), '3000', 0)
+		Mobile.hideKeyboard()
+		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_lokasi'), 'jakarta', 0)
+		Mobile.hideKeyboard()
+		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_deskripsi'), 'godzilla gemoy', 0)
+		Mobile.hideKeyboard()
+		Mobile.tap(findTestObject('Object Repository/Edit Product Page/btn_perbaruiProduk'), 0)
+	}
+
+	@Then("user will fail save edit product in edit product page")
+	public void user_will_fail_save_edit_product_in_edit_product_page() {
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Edit Product Page/text_errorNamaProdukKosong'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Edit Product Page/text_errorNamaProdukKosong'), 0)
+	}
 }
 
 
