@@ -171,6 +171,43 @@ class CRUDProduct {
 		Mobile.waitForElementPresent(findTestObject('Object Repository/Edit Product Page/text_errorNamaProdukKosong'), 0)
 		Mobile.verifyElementVisible(findTestObject('Object Repository/Edit Product Page/text_errorNamaProdukKosong'), 0)
 	}
+	
+	@Given("user go to Daftar Jual Saya page and has at least 1 published product")
+	public void user_go_to_Daftar_Jual_Saya_page_and_has_at_least_1_published_product() {
+		Mobile.tap(findTestObject('Object Repository/AkunMenu/btn_daftarJualSaya'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Daftar Jual Saya/txt_daftarJualSaya'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Daftar Jual Saya/txt_daftarJualSaya'), 0)
+
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Daftar Jual Saya/card_product'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Daftar Jual Saya/card_product'), 0)
+	}
+
+	@When("user click the trash can button in one of the product card and then click Hapus button")
+	public void user_click_the_trash_can_button_in_one_of_the_product_card_and_then_click_Hapus_button() {
+		Mobile.tap(findTestObject('Object Repository/Daftar Jual Saya/btn_trashCan'), 0)
+		Mobile.tap(findTestObject('Object Repository/Daftar Jual Saya/btn_hapus'), 0)
+	}
+
+	@When("user click one of the desired product in Homepage")
+	public void user_click_one_of_the_desired_product_in_Homepage() {
+		Mobile.tap(findTestObject('Object Repository/Dashboard/btn_dashboard'), 0)
+		Mobile.tap(findTestObject('Object Repository/Dashboard/product_1'), 0)
+	}
+
+	@Then("user will see a pop up notification that the product is successfully deleted")
+	public void user_will_see_a_pop_up_notification_that_the_product_is_successfully_deleted() {
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Daftar Jual Saya/txt_success'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Daftar Jual Saya/txt_success'), 0)
+	}
+
+	@Then("user will be redirected to their desired product details page while the Delete button will not be displayed")
+	public void user_will_be_redirected_to_their_desired_product_details_page_while_the_Delete_button_will_not_be_displayed() {
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Product Details/img_product'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Product Details/img_product'), 0)
+
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Buyer Transaction Page/btn_nego'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Buyer Transaction Page/btn_nego'), 0)
+	}
 }
 
 
