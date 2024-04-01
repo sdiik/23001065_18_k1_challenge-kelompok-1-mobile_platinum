@@ -34,3 +34,14 @@ Feature: CRUD Product Mobile
     Given user has opened edit product page
     When user edit nama produk field with empty value and click Terbitkan button in edit product page
     Then user will fail save edit product in edit product page
+    
+  @positive
+  Scenario: TC.MOBILE.28-User delete their own product
+    Given user go to Daftar Jual Saya page and has at least 1 published product
+    When user click the trash can button in one of the product card and then click Hapus button
+    Then user will see a pop up notification that the product is successfully deleted
+
+  @negative
+  Scenario: TC.MOBILE.29-User tries to delete another user's product
+    When user click one of the desired product in Homepage
+    Then user will be redirected to their desired product details page while the Delete button will not be displayed
