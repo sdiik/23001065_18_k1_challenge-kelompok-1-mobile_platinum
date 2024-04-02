@@ -50,9 +50,6 @@ public class SearchProduct {
 	private static TestObject inputSecondSearch = findTestObject('Object Repository/Search Product Page/input_second_search')
 	private static TestObject priceProduct = findTestObject('Object Repository/Search Product Page/price_product')
 
-
-
-
 	@Given("user has opened homepage")
 	public void user_has_opened_homepage() {
 		Mobile.startApplication('Apk/app-debug.apk', true)
@@ -77,7 +74,6 @@ public class SearchProduct {
 		Mobile.verifyElementVisible(inputSecondSearch, 0)
 		Mobile.setText(inputSecondSearch, '##', 0)
 	}
-
 
 	@Then("user will successfully get list of products based on the correct keywords")
 	public void user_will_successfully_get_list_of_products_based_on_the_correct_keywords() {
