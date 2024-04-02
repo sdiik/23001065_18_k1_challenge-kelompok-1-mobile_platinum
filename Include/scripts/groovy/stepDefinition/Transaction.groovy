@@ -24,9 +24,12 @@ import internal.GlobalVariable
 import cucumber.api.java.en.Given
 import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
+import stepDefinition.CRUDProduct
 
 
 public class Transaction {
+	
+	private static String productName
 
 	@Given('buyers succesfully register to the app')
 	public void buyers_succesfully_register_to_the_app() {
@@ -59,7 +62,7 @@ public class Transaction {
 
 		Mobile.setText(findTestObject('Object Repository/Register/TextBox _nama'), 'Archi Buyer', 0)
 		Mobile.hideKeyboard()
-		Mobile.setText(findTestObject('Object Repository/Register/TextBox_ email'), 'ArchiBuyer2' + randomNumber + '@mail.com', 0)
+		Mobile.setText(findTestObject('Object Repository/Register/TextBox_ email'), 'ArchiBuyer3' + randomNumber + '@mail.com', 0)
 		Mobile.hideKeyboard()
 		Mobile.setText(findTestObject('Object Repository/Register/TextBox_password'), '041099', 0)
 		Mobile.hideKeyboard()
@@ -84,12 +87,17 @@ public class Transaction {
 	public void buyers_input_all_correct_value_for_offer_information() {
 
 		Mobile.tap(findTestObject('Object Repository/Dashboard/btn_beranda'), 0)
-
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Search Product Page/input_first_search'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Search Product Page/input_first_search'), 0)
+		
+		Mobile.tap(findTestObject('Object Repository/Search Product Page/input_first_search'), 0)
+		
 		Mobile.waitForElementPresent(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
 		Mobile.verifyElementVisible(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
 
 		Mobile.tap(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
-		Mobile.setText(findTestObject('Object Repository/Search Product Page/input_second_search'), 'kucing archi 1', 0)
+		Mobile.setText(findTestObject('Object Repository/Search Product Page/input_second_search'), 'kucing archi 3', 0)
 		Mobile.hideKeyboard()
 
 		Mobile.waitForElementPresent(findTestObject('Object Repository/Search Product Page/view_products'), 0)
@@ -155,15 +163,16 @@ public class Transaction {
 
 	@When('buyers click negotiation button')
 	public void buyers_click_negotiation_button() {
-
-		Mobile.waitForElementPresent(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
-		Mobile.verifyElementVisible(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Search Product Page/input_first_search'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Search Product Page/input_first_search'), 0)
+		Mobile.tap(findTestObject('Object Repository/Search Product Page/input_first_search'), 0)
 
 		Mobile.waitForElementPresent(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
 		Mobile.verifyElementVisible(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
 
 		Mobile.tap(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
-		Mobile.setText(findTestObject('Object Repository/Search Product Page/input_second_search'), 'kucing archi 1', 0)
+		Mobile.setText(findTestObject('Object Repository/Search Product Page/input_second_search'), 'kucing archi 3', 0)
 		Mobile.hideKeyboard()
 
 		Mobile.waitForElementPresent(findTestObject('Object Repository/Search Product Page/view_products'), 0)
@@ -189,14 +198,18 @@ public class Transaction {
 
 	@When('buyers input string values in the offer price box')
 	public void buyers_input_string_values_in_the_offer_price_box() {
-
+		
 		Mobile.tap(findTestObject('Object Repository/Dashboard/btn_beranda'), 0)
-
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Search Product Page/input_first_search'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Search Product Page/input_first_search'), 0)
+		Mobile.tap(findTestObject('Object Repository/Search Product Page/input_first_search'), 0)
+		
 		Mobile.waitForElementPresent(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
 		Mobile.verifyElementVisible(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
 
 		Mobile.tap(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
-		Mobile.setText(findTestObject('Object Repository/Search Product Page/input_second_search'), 'kucing archi 1', 0)
+		Mobile.setText(findTestObject('Object Repository/Search Product Page/input_second_search'), 'kucing archi 3', 0)
 		Mobile.hideKeyboard()
 
 		Mobile.waitForElementPresent(findTestObject('Object Repository/Search Product Page/view_products'), 0)
@@ -222,6 +235,238 @@ public class Transaction {
 	public void buyers_will_not_be_able_to_input_the_string_values() {
 		Mobile.tap(findTestObject('Object Repository/Buyer Transaction Page/btn_nego'), 0)
 		Mobile.tap(findTestObject('Object Repository/Buyer Transaction Page/btn_kirim'), 0)
+		Mobile.verifyElementNotVisible(findTestObject('Object Repository/Buyer Transaction Page/text_offersuccess'), 0)
 		Mobile.closeApplication()
 	}
+	
+	@Given('sellers succesfully login to the app')
+	public void sellers_succesfully_login_to_the_app() {
+		
+		Mobile.startApplication('Apk/app-debug.apk', true)
+		
+		Mobile.tap(findTestObject('Object Repository/Dashboard/btn_akun'), 0)
+		
+	    Mobile.waitForElementPresent(findTestObject('Object Repository/Login page/btn_loginmsk'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Login page/btn_loginmsk'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Login page/txt_AkunSaya'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Login page/txt_AkunSaya'), 0)
+		
+		Mobile.tap(findTestObject('Object Repository/Login page/btn_loginmsk'), 0)
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Login page/TextArea_email'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Login page/TextArea_email'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Login page/TextArea_password'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Login page/TextArea_password'), 0)
+		
+		Mobile.setText(findTestObject('Object Repository/Login page/TextArea_email'), 'ArchiMobile1@mail.com', 0)
+		Mobile.hideKeyboard()
+		Mobile.setText(findTestObject('Object Repository/Login page/TextArea_password'), '041099', 0)
+		Mobile.hideKeyboard()
+		Mobile.tap(findTestObject('Object Repository/Login page/btn_loginmsk2'), 0)
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/AkunMenu/btn_daftarJualSaya'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/AkunMenu/btn_daftarJualSaya'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/AkunMenu/btn_keluar'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/AkunMenu/btn_keluar'), 0)
+		
+	}
+	
+	@Given('sellers succesfully post a product')
+	public void sellers_succesfully_post_a_product() {
+		
+		int randomNumber2
+		randomNumber2 = (int)(Math.random()*10000)
+		
+		Mobile.tap(findTestObject('Object Repository/Dashboard/btn_jual'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Post Product Page/btn_preview'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Post Product Page/btn_preview'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Post Product Page/btn_terbitkan'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Post Product Page/btn_terbitkan'), 0)
+		
+		productName = "Kopi Archi " + randomNumber2
+		
+		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_namaProduk'), productName, 0)
+		Mobile.hideKeyboard()
+		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_hargaProduk'), '1000', 0)
+		Mobile.hideKeyboard()
+		Mobile.tap(findTestObject('Object Repository/Post Product Page/select_kategori'), 0)
+		Mobile.tap(findTestObject('Object Repository/Post Product Page/select_elektronikKategori'), 0)
+		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_lokasi'), 'Malang', 0)
+		Mobile.hideKeyboard()
+		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_deskripsi'), 'kucing yang lucu', 0)
+		Mobile.hideKeyboard()
+		Mobile.tap(findTestObject('Object Repository/Post Product Page/btn_img'), 0)
+		Mobile.tap(findTestObject('Object Repository/Post Product Page/btn_galeri'), 0)
+		Mobile.tap(findTestObject('Object Repository/Post Product Page/img_fotoProduk2'), 0)
+		
+		Mobile.tap(findTestObject('Object Repository/Post Product Page/btn_terbitkan'), 0)
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Daftar Jual Saya/btn_back'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Daftar Jual Saya/btn_back'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Daftar Jual Saya/txt_terjual'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Daftar Jual Saya/txt_terjual'), 0)
+		
+		Mobile.tap(findTestObject('Object Repository/Daftar Jual Saya/btn_back'), 0)
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Dashboard/btn_akun'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Dashboard/btn_akun'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/AkunMenu/btn_keluar'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/AkunMenu/btn_keluar'), 0)
+		
+		Mobile.tap(findTestObject('Object Repository/Dashboard/btn_akun'), 0)
+		Mobile.tap(findTestObject('Object Repository/AkunMenu/btn_keluar'), 0)
+		
+	}
+	
+	@When('buyers succesfully send the offers')
+	public void buyers_succesfully_send_the_offers() {
+		
+		Mobile.tap(findTestObject('Object Repository/Dashboard/btn_akun'), 0)
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Login page/btn_loginmsk'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Login page/btn_loginmsk'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Login page/txt_AkunSaya'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Login page/txt_AkunSaya'), 0)
+		
+		Mobile.tap(findTestObject('Object Repository/Login page/btn_loginmsk'), 0)
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Login page/TextArea_email'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Login page/TextArea_email'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Login page/TextArea_password'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Login page/TextArea_password'), 0)
+		
+		Mobile.setText(findTestObject('Object Repository/Login page/TextArea_email'), 'ArchiMobile2@mail.com', 0)
+		Mobile.hideKeyboard()
+		Mobile.setText(findTestObject('Object Repository/Login page/TextArea_password'), '041099', 0)
+		Mobile.hideKeyboard()
+		Mobile.tap(findTestObject('Object Repository/Login page/btn_loginmsk2'), 0)
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/AkunMenu/btn_daftarJualSaya'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/AkunMenu/btn_daftarJualSaya'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/AkunMenu/btn_keluar'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/AkunMenu/btn_keluar'), 0)
+		
+		
+		Mobile.tap(findTestObject('Object Repository/Dashboard/btn_beranda'), 0)
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Search Product Page/input_first_search'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Search Product Page/input_first_search'), 0)
+		
+		Mobile.tap(findTestObject('Object Repository/Search Product Page/input_first_search'), 0)
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
+
+		Mobile.tap(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
+		Mobile.setText(findTestObject('Object Repository/Search Product Page/input_second_search'), productName, 0)
+		Mobile.hideKeyboard()
+
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Search Product Page/view_products'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Search Product Page/view_products'), 0)
+
+		Mobile.tap(findTestObject('Object Repository/Search Product Page/view_products'), 0)
+
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Buyer Transaction Page/btn_nego'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Buyer Transaction Page/btn_nego'), 0)
+
+		Mobile.tap(findTestObject('Object Repository/Buyer Transaction Page/btn_nego'), 0)
+
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Buyer Transaction Page/TextArea_harga'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Buyer Transaction Page/TextArea_harga'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Buyer Transaction Page/btn_kirim'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Buyer Transaction Page/btn_kirim'), 0)
+
+		Mobile.setText(findTestObject('Object Repository/Buyer Transaction Page/TextArea_harga'), '5000', 0)
+		Mobile.hideKeyboard()
+		Mobile.tap(findTestObject('Object Repository/Buyer Transaction Page/btn_nego'), 0)
+		Mobile.tap(findTestObject('Object Repository/Buyer Transaction Page/btn_kirim'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Buyer Transaction Page/text_offersuccess'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Buyer Transaction Page/text_offersuccess'), 0)
+		Mobile.tap(findTestObject('Object Repository/Daftar Jual Saya/btn_back'), 0)
+		Mobile.tap(findTestObject('Object Repository/Daftar Jual Saya/btn_back'), 0)
+		
+		Mobile.tap(findTestObject('Object Repository/Dashboard/btn_akun'), 0)
+		Mobile.tap(findTestObject('Object Repository/AkunMenu/btn_keluar'), 0)
+
+	}
+	
+	@When('sellers (.*) the offer')
+	public void sellers_the_offer(String condition_one) {
+		
+		Mobile.tap(findTestObject('Object Repository/Dashboard/btn_akun'), 0)
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Login page/btn_loginmsk'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Login page/btn_loginmsk'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Login page/txt_AkunSaya'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Login page/txt_AkunSaya'), 0)
+		
+		Mobile.tap(findTestObject('Object Repository/Login page/btn_loginmsk'), 0)
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Login page/TextArea_email'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Login page/TextArea_email'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Login page/TextArea_password'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Login page/TextArea_password'), 0)
+		
+		Mobile.setText(findTestObject('Object Repository/Login page/TextArea_email'), 'ArchiMobile1@mail.com', 0)
+		Mobile.hideKeyboard()
+		Mobile.setText(findTestObject('Object Repository/Login page/TextArea_password'), '041099', 0)
+		Mobile.hideKeyboard()
+		Mobile.tap(findTestObject('Object Repository/Login page/btn_loginmsk2'), 0)
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/AkunMenu/btn_daftarJualSaya'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/AkunMenu/btn_daftarJualSaya'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/AkunMenu/btn_edit'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/AkunMenu/btn_edit'), 0)
+		
+		Mobile.tap(findTestObject('Object Repository/AkunMenu/btn_daftarJualSaya'), 0)
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Daftar Jual Saya/txt_diminati'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Daftar Jual Saya/txt_diminati'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Daftar Jual Saya/txt_terjual'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Daftar Jual Saya/txt_terjual'), 0)
+		
+		Mobile.tap(findTestObject('Object Repository/Daftar Jual Saya/txt_diminati'), 0)
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Seller Transaction Page/card_penawaranProduk'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Seller Transaction Page/card_penawaranProduk'), 0)
+		
+		Mobile.tap(findTestObject('Object Repository/Seller Transaction Page/card_penawaranProduk'), 0)
+		
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Seller Transaction Page/btn_terima'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Seller Transaction Page/btn_terima'), 0)
+		Mobile.waitForElementPresent(findTestObject('Object Repository/Seller Transaction Page/btn_tolak'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/Seller Transaction Page/btn_tolak'), 0)
+		
+		if(condition_one == "accepts") {
+			Mobile.tap(findTestObject('Object Repository/Seller Transaction Page/btn_terima'), 0)
+			Mobile.pressBack()
+			Mobile.tap(findTestObject('Object Repository/Seller Transaction Page/btn_status'), 0)
+			
+			Mobile.waitForElementPresent(findTestObject('Object Repository/Seller Transaction Page/btnRadio_success'), 0)
+			Mobile.verifyElementVisible(findTestObject('Object Repository/Seller Transaction Page/btnRadio_success'), 0)
+			Mobile.waitForElementPresent(findTestObject('Object Repository/Seller Transaction Page/btn_simpan'), 0)
+			Mobile.verifyElementVisible(findTestObject('Object Repository/Seller Transaction Page/btn_simpan'), 0)
+			Mobile.tap(findTestObject('Object Repository/Seller Transaction Page/btnRadio_success'), 0)
+			Mobile.tap(findTestObject('Object Repository/Seller Transaction Page/btn_simpan'), 0)
+			
+		}
+		else if (condition_one == "rejects") {
+			Mobile.tap(findTestObject('Object Repository/Seller Transaction Page/btn_tolak'), 0)
+		}
+		
+	}
+	
+	@Then('seller will (.*) the transaction')
+	public void seller_will_the_transaction(String condition_two) {
+		
+		if(condition_two == "complete") {
+			Mobile.waitForElementPresent(findTestObject('Object Repository/Seller Transaction Page/txt_berhasilTerjual'), 0)
+			Mobile.verifyElementVisible(findTestObject('Object Repository/Seller Transaction Page/txt_berhasilTerjual'), 0)
+		}
+		else if(condition_two == "rejects") {
+			Mobile.waitForElementPresent(findTestObject('Object Repository/Seller Transaction Page/message_transactionSuccess'), 0)
+			Mobile.verifyElementVisible(findTestObject('Object Repository/Seller Transaction Page/message_transactionSuccess'), 0)
+		}
+	}
+	
 }

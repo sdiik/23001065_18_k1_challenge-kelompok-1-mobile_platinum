@@ -5,11 +5,12 @@
    <tag></tag>
    <UUID>83609a50-1b40-4e22-95e3-4fbf1f1ad0d3</UUID>
    <createdVersion>9.3.1</createdVersion>
-   <freeLicense>true</freeLicense>
+   <freeLicense>false</freeLicense>
    <migratedVersion>5.9.0</migratedVersion>
-   <modifiedVersion>9.3.1</modifiedVersion>
+   <modifiedEdition>ENTERPRISE</modifiedEdition>
+   <modifiedVersion>9.3.2</modifiedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
-   <projectFileLocation>/Users/asani/Downloads/Learning/QAE Biner Academy/23001065_18_k1_challenge-kelompok-1-mobile_platinum/23001065_18_K1_Challenge Kelompok 1 Mobile_Platinum.prj</projectFileLocation>
+   <projectFileLocation>C:\Users\archi_000\Katalon Studio\23001065_18_k1_challenge-kelompok-1-mobile_platinum\23001065_18_K1_Challenge Kelompok 1 Mobile_Platinum.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
