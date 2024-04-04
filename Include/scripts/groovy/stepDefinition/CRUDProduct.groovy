@@ -133,12 +133,12 @@ class CRUDProduct {
 
 	@When("user edit valid credential in all required fields an click Perbarui produk button in edit product page")
 	public void user_edit_valid_credential_in_all_required_fields_an_click_Perbarui_produk_button_in_edit_product_page() {
-		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_namaProduk'), 'godzilla', 0)
-		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_hargaProduk'), '3000', 0)
+		Mobile.setText(findTestObject('Object Repository/Edit Product Page/textbox_namaProduk'), 'godzilla', 0)
+		Mobile.setText(findTestObject('Object Repository/Edit Product Page/textbox_hargaProduk'), '3000', 0)
 		Mobile.hideKeyboard()
-		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_lokasi'), 'jakarta', 0)
+		Mobile.setText(findTestObject('Object Repository/Edit Product Page/textbox_lokasi'), 'jakarta', 0)
 		Mobile.hideKeyboard()
-		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_deskripsi'), 'godzilla gemoy', 0)
+		Mobile.setText(findTestObject('Object Repository/Edit Product Page/textbox_deskripsi'), 'godzilla gemoy', 0)
 		Mobile.hideKeyboard()
 		Mobile.tap(findTestObject('Object Repository/Post Product Page/btn_img'), 0)
 		Mobile.tap(findTestObject('Object Repository/Post Product Page/btn_galeri'), 0)
@@ -157,11 +157,12 @@ class CRUDProduct {
 	@When("user edit nama produk field with empty value and click Terbitkan button in edit product page")
 	public void user_edit_nama_produk_field_with_empty_value_and_click_Terbitkan_button_in_edit_product_page() {
 		Mobile.clearText(findTestObject('Object Repository/Edit Product Page/textbox_namaProduk'), 0)
-		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_hargaProduk'), '3000', 0)
+		Mobile.setText(findTestObject('Object Repository/Edit Product Page/textbox_namaProduk'), '', 0)
+		Mobile.setText(findTestObject('Object Repository/Edit Product Page/textbox_hargaProduk'), '3000', 0)
 		Mobile.hideKeyboard()
-		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_lokasi'), 'jakarta', 0)
+		Mobile.setText(findTestObject('Object Repository/Edit Product Page/textbox_lokasi'), 'jakarta', 0)
 		Mobile.hideKeyboard()
-		Mobile.setText(findTestObject('Object Repository/Post Product Page/textbox_deskripsi'), 'godzilla gemoy', 0)
+		Mobile.setText(findTestObject('Object Repository/Edit Product Page/textbox_deskripsi'), 'godzilla gemoy', 0)
 		Mobile.hideKeyboard()
 		Mobile.tap(findTestObject('Object Repository/Edit Product Page/btn_perbaruiProduk'), 0)
 	}
