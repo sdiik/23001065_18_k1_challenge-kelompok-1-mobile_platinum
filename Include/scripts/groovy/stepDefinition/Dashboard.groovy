@@ -47,12 +47,18 @@ class Dashboard {
 	public void user_is_on_page(String page) {
 	Mobile.startApplication('Apk/app-debug.apk', true) 
 	 if (page == "notification") {
+		 Mobile.verifyElementVisible(findTestObject('Object Repository/Dashboard/product_1'), 0)
+		 Mobile.tap(findTestObject('Object Repository/Notification/btn_notification'), 0)
 		 Mobile.waitForElementPresent(findTestObject('Object Repository/Notification/text_notifikasi'), 0)
 		 Mobile.verifyElementVisible(findTestObject('Object Repository/Notification/text_notifikasi'), 0)
 	 } else if (page == "transaction") {
+		 Mobile.verifyElementVisible(findTestObject('Object Repository/Dashboard/product_1'), 0)
+		 Mobile.tap(findTestObject('Object Repository/Buyer Transaction Page/btn_transaksi'), 0)
 		 Mobile.waitForElementPresent(findTestObject('Object Repository/Buyer Transaction Page/text_transaksi'), 0)
 		 Mobile.verifyElementVisible(findTestObject('Object Repository/Buyer Transaction Page/text_transaksi'), 0)
 	 } else if (page == "account") {
+		 Mobile.verifyElementVisible(findTestObject('Object Repository/Dashboard/product_1'), 0)
+		 Mobile.tap(findTestObject('Object Repository/Dashboard/btn_akun'), 0)
 		 Mobile.waitForElementPresent(findTestObject('Object Repository/AkunMenu/text_AkunSaya'), 0)
 		 Mobile.verifyElementVisible(findTestObject('Object Repository/AkunMenu/text_AkunSaya'), 0)
 	 } 
