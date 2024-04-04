@@ -128,6 +128,7 @@ class Login {
 	  Mobile.hideKeyboard()
 	  Mobile.setText(findTestObject('Object Repository/Login page/TextArea_password'), 'sandra123', 0)
 	  Mobile.hideKeyboard()
+	  Mobile.tap(findTestObject('Object Repository/Login page/btn_loginmsk'), 0)
   } 
   
   @When('user on Account page')
