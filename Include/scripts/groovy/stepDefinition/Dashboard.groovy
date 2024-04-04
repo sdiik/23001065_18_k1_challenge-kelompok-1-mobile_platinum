@@ -44,14 +44,15 @@ import cucumber.api.java.en.When
  
 class Dashboard { 
 	@Given('user is on (.*) page') 
-	public void user_is_on_page() {
-	 if (type == "notification") {
+	public void user_is_on_page(String page) {
+	Mobile.startApplication('Apk/app-debug.apk', true) 
+	 if (page == "notification") {
 		 Mobile.waitForElementPresent(findTestObject('Object Repository/Notification/text_notifikasi'), 0)
 		 Mobile.verifyElementVisible(findTestObject('Object Repository/Notification/text_notifikasi'), 0)
-	 } else if (type == "transastion") {
+	 } else if (page == "transaction") {
 		 Mobile.waitForElementPresent(findTestObject('Object Repository/Buyer Transaction Page/text_transaksi'), 0)
 		 Mobile.verifyElementVisible(findTestObject('Object Repository/Buyer Transaction Page/text_transaksi'), 0)
-	 } else if (type == "account") {
+	 } else if (page == "account") {
 		 Mobile.waitForElementPresent(findTestObject('Object Repository/AkunMenu/text_AkunSaya'), 0)
 		 Mobile.verifyElementVisible(findTestObject('Object Repository/AkunMenu/text_AkunSaya'), 0)
 	 } 
