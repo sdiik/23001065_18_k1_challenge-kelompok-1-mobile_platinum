@@ -171,7 +171,7 @@ class CRUDProduct {
 		Mobile.waitForElementPresent(findTestObject('Object Repository/Edit Product Page/text_errorNamaProdukKosong'), 0)
 		Mobile.verifyElementVisible(findTestObject('Object Repository/Edit Product Page/text_errorNamaProdukKosong'), 0)
 	}
-	
+
 	@Given("user go to Daftar Jual Saya page and has at least 1 published product")
 	public void user_go_to_Daftar_Jual_Saya_page_and_has_at_least_1_published_product() {
 		Mobile.tap(findTestObject('Object Repository/AkunMenu/btn_daftarJualSaya'), 0)
