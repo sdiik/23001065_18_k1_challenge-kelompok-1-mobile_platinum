@@ -1,7 +1,7 @@
 Feature: CRUD Product Mobile
 
   Background: User already login
-    Given user on the home page
+    Given user on the Login page
     When user input the valid credential of username and password
     And user click Masuk button
     Then user will be redirect to Account page
