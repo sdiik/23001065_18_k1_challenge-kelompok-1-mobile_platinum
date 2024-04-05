@@ -1,3 +1,4 @@
+@Authorization
 Feature: Authorization Feature
 
   Scenario: TC.MOBILE.6-User Login with the valid credential (valid email and password)
@@ -18,7 +19,7 @@ Feature: Authorization Feature
     And user click Masuk button
     Then user will see a notification user must fill email field first
 
-  Scenario: TC.WEB.9-User Logout to exit current session
+  Scenario: TC.MOBILE.9-User Logout to exit current session
     Given user succesfully login to the app
     When user on Account page
     Then user click Logout button

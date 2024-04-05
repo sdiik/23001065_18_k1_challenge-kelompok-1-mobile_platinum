@@ -1,3 +1,4 @@
+@SearchProducts
 Feature: Mobile get a search products feature
 
   @Positive

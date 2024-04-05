@@ -1,3 +1,4 @@
+@CRUDProduct
 Feature: CRUD Product Mobile
 
   Background: User already login

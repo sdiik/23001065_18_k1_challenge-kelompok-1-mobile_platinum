@@ -1,3 +1,4 @@
+@SoldProducts
 Feature: Mobile sold product feature
 
   @Positive

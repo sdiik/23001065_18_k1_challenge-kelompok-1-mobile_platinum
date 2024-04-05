@@ -1,3 +1,4 @@
+@Notification
 Feature: Notification Feature
 
   Scenario Outline: <case_id>-User sees <notification> on the notification pop-up
