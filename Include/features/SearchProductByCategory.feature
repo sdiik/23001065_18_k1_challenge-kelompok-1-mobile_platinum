@@ -8,5 +8,5 @@ Feature: Mobile get a products by category feature
 
     Examples: 
       | case_id      | type       							|
-      | TC.MOBILE.30 | computer and accessories	|
-      | TC.MOBILE.31 | electronic								|
+      | TC.MOBILE.32 | computer and accessories	|
+      | TC.MOBILE.33 | electronic								|

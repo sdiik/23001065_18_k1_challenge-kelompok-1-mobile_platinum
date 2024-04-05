@@ -15,20 +15,20 @@ Feature: Account Info Feature
 
     Examples: 
       | case_id      | fields        |
-      | TC.MOBILE.21 | photo profile |
-      | TC.MOBILE.22 | name          |
-      | TC.MOBILE.23 | phone number  |
-      | TC.MOBILE.24 | city          |
-      | TC.MOBILE.25 | address       |
+      | TC.MOBILE.23 | photo profile |
+      | TC.MOBILE.24 | name          |
+      | TC.MOBILE.25 | phone number  |
+      | TC.MOBILE.26 | city          |
+      | TC.MOBILE.27 | address       |
 
   @negative
-  Scenario: TC.MOBILE.26-User tries to input phone number value with value more than 14 numbers
+  Scenario: TC.MOBILE.28-User tries to input phone number value with value more than 14 numbers
     Given user go to Lengkapi Info Akun page
     When user fill the phone number fields with value more than 14 numbers
     Then the fields will be restricted to 14 digits maximum and user will be remain at phone number fields
 
   @negative
-  Scenario: TC.MOBILE.27-User tries to input the required files with empty value
+  Scenario: TC.MOBILE.29-User tries to input the required files with empty value
     Given user go to Lengkapi Info Akun page
     When user set the one of the fields to empty and submit the data in Lengkapi Info Akun page
     Then user will see the error message that user has to fill the required fields first and user will be remain at one at the fields that has been selected before
