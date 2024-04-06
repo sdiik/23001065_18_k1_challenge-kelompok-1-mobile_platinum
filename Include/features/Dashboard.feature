@@ -1,3 +1,4 @@
+@Dashboard
 Feature: Dashboard Feature
 
 Scenario Outline: <case_id>-User on <page> can go back to Dashboard

@@ -1,3 +1,4 @@
+@Notification
 Feature: Notification Feature
 
   Scenario Outline: <case_id>-User sees <notification> on the notification pop-up
@@ -6,6 +7,6 @@ Feature: Notification Feature
     Then user will be seen <notification> on the notification page
 
     Examples: 
-      | case_id   | notification                    |
-      | TC.WEB.19 | negotiated product notification |
-      | TC.WEB.20 | published product notification  |
+      | case_id      | notification                    |
+      | TC.MOBILE.21 | negotiated product notification |
+      | TC.MOBILE.22 | published product notification  |
