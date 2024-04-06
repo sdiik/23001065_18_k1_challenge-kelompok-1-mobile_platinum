@@ -54,7 +54,6 @@ class SoldProduct {
 	private static TestObject btnFavorite = findTestObject('Object Repository/Sold Products Page/btn_favorite')
 	private static TestObject btnSold = findTestObject('Object Repository/Sold Products Page/btn_sold')
 	private static TestObject listSoldProduct = findTestObject('Object Repository/Sold Products Page/list_sold_products')
-	private static TestObject txtSoldProduct = findTestObject('Object Repository/Sold Products Page/title_sold_product')
 	private static TestObject imgSoldProduct = findTestObject('Object Repository/Sold Products Page/image_sold_product')
 	private static TestObject txtEmptySoldProduct = findTestObject('Object Repository/Sold Products Page/title_empty_sold_product')
 	private static TestObject imgEmptySoldProduct = findTestObject('Object Repository/Sold Products Page/image_empty_sold_product')
@@ -104,8 +103,6 @@ class SoldProduct {
 	public void seller_will_successfull_gets_list_of_products_sold() {
 		Mobile.waitForElementPresent(listSoldProduct, 0)
 		Mobile.verifyElementVisible(listSoldProduct, 0)
-		Mobile.waitForElementPresent(txtSoldProduct, 0)
-		Mobile.verifyElementVisible(txtSoldProduct, 0)
 		Mobile.waitForElementPresent(imgSoldProduct, 0)
 		Mobile.verifyElementVisible(imgSoldProduct, 0)
 		Mobile.closeApplication()

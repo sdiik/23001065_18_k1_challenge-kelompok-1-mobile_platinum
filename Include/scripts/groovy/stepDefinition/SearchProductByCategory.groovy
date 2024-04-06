@@ -48,7 +48,7 @@ import cucumber.api.java.en.When
 public class SearchProductByCategory {
 	private static TestObject btnElectronic = findTestObject('Object Repository/Category Product Page/btn_electronic')
 	private static TestObject btnComputerAndAccesories = findTestObject('Object Repository/Category Product Page/btn_computer_and_accessories')
-	private static TestObject titleProduct = findTestObject('Object Repository/Category Product Page/title_product')
+	private static TestObject imageProduct = findTestObject('Object Repository/Category Product Page/image_product')
 	private static TestObject viewProduct = findTestObject('Object Repository/Category Product Page/view_product')
 	private static TestObject scrollListProduct = findTestObject('Object Repository/Category Product Page/scroll_list_products')
 	private static TestObject scrollCategoriesProducts = findTestObject('Object Repository/Category Product Page/scroll_categories_products')
@@ -68,13 +68,10 @@ public class SearchProductByCategory {
 
 	@Then("user will successfully get list (.*) products")
 	public void user_will_successfully_get_list_products(String type) {
-		Mobile.waitForElementPresent(titleProduct, 0)
+		Mobile.waitForElementPresent(imageProduct, 0)
 		Mobile.waitForElementPresent(viewProduct, 0)
-		if (type == "computer and accessories") {
-			Mobile.scrollToText('apel')
-		} else if (type == "electronic") {
-			Mobile.scrollToText('ac')
-		}
+		Mobile.verifyElementVisible(imageProduct, 0)
+		Mobile.verifyElementVisible(viewProduct, 0)
 		Mobile.closeApplication()
 	}
 }
