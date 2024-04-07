@@ -67,7 +67,7 @@ class CRUDProduct {
 		Mobile.hideKeyboard()
 		Mobile.tap(findTestObject('Object Repository/Post Product Page/btn_img'), 0)
 		Mobile.tap(findTestObject('Object Repository/Post Product Page/btn_galeri'), 0)
-		Mobile.tap(findTestObject('Object Repository/Post Product Page/img_fotoProduk'), 0)
+		Mobile.tap(findTestObject('Object Repository/Post Product Page/img_fotoProdukAndroid11'), 0)
 		if(button=="Terbitkan") {
 			Mobile.tap(findTestObject('Object Repository/Post Product Page/btn_terbitkan'), 0)
 		}else if(button=="Preview") {
@@ -142,7 +142,7 @@ class CRUDProduct {
 		Mobile.hideKeyboard()
 		Mobile.tap(findTestObject('Object Repository/Post Product Page/btn_img'), 0)
 		Mobile.tap(findTestObject('Object Repository/Post Product Page/btn_galeri'), 0)
-		Mobile.tap(findTestObject('Object Repository/Post Product Page/img_fotoProduk'), 0)
+		Mobile.tap(findTestObject('Object Repository/Post Product Page/img_fotoProdukAndroid11'), 0)
 		Mobile.tap(findTestObject('Object Repository/Edit Product Page/btn_perbaruiProduk'), 0)
 	}
 
