@@ -39,7 +39,7 @@ public class AccountInfo {
 		if (fields=="photo profile") {
 			Mobile.tap(findTestObject('Object Repository/AccountInfo/btn_profilePicture'), 0)
 			Mobile.tap(findTestObject('Object Repository/AccountInfo/btn_galeri'), 0)
-			Mobile.tap(findTestObject('Object Repository/AccountInfo/photo_1'), 0)
+			Mobile.tap(findTestObject('Object Repository/Post Product Page/img_fotoProdukAndroid11'), 0)
 		}else if (fields=="name") {
 			Mobile.tap(findTestObject('Object Repository/AccountInfo/btn_nama'), 0)
 			Mobile.setText(findTestObject('Object Repository/AccountInfo/TextArea_popUpFields'), 'edit nama auto', 0)

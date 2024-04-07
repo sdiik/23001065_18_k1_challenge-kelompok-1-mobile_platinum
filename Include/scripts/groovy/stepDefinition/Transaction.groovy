@@ -75,6 +75,7 @@ public class Transaction {
 		Mobile.setText(findTestObject('Object Repository/Register/TexBox_alamat'), 'villa bintaro indah', 0)
 		Mobile.hideKeyboard()
 
+		Mobile.scrollToText('Sudah punya akun?')
 		Mobile.tap(findTestObject('Object Repository/Register/btn_daftar'), 0)
 
 		Mobile.waitForElementPresent(findTestObject('Object Repository/AkunMenu/btn_daftarJualSaya'), 0)
@@ -97,7 +98,7 @@ public class Transaction {
 		Mobile.verifyElementVisible(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
 
 		Mobile.tap(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
-		Mobile.setText(findTestObject('Object Repository/Search Product Page/input_second_search'), 'kucing archi 3', 0)
+		Mobile.setText(findTestObject('Object Repository/Search Product Page/input_second_search'), 'kucing archi 5', 0)
 		Mobile.hideKeyboard()
 
 		Mobile.waitForElementPresent(findTestObject('Object Repository/Search Product Page/view_products'), 0)
@@ -172,7 +173,7 @@ public class Transaction {
 		Mobile.verifyElementVisible(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
 
 		Mobile.tap(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
-		Mobile.setText(findTestObject('Object Repository/Search Product Page/input_second_search'), 'kucing archi 3', 0)
+		Mobile.setText(findTestObject('Object Repository/Search Product Page/input_second_search'), 'kucing archi 5', 0)
 		Mobile.hideKeyboard()
 
 		Mobile.waitForElementPresent(findTestObject('Object Repository/Search Product Page/view_products'), 0)
@@ -209,7 +210,7 @@ public class Transaction {
 		Mobile.verifyElementVisible(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
 
 		Mobile.tap(findTestObject('Object Repository/Search Product Page/input_second_search'), 0)
-		Mobile.setText(findTestObject('Object Repository/Search Product Page/input_second_search'), 'kucing archi 3', 0)
+		Mobile.setText(findTestObject('Object Repository/Search Product Page/input_second_search'), 'kucing archi 5', 0)
 		Mobile.hideKeyboard()
 
 		Mobile.waitForElementPresent(findTestObject('Object Repository/Search Product Page/view_products'), 0)
@@ -296,7 +297,7 @@ public class Transaction {
 		Mobile.hideKeyboard()
 		Mobile.tap(findTestObject('Object Repository/Post Product Page/btn_img'), 0)
 		Mobile.tap(findTestObject('Object Repository/Post Product Page/btn_galeri'), 0)
-		Mobile.tap(findTestObject('Object Repository/Post Product Page/img_fotoProduk2'), 0)
+		Mobile.tap(findTestObject('Object Repository/Post Product Page/img_fotoProdukAndroid11'), 0)
 
 		Mobile.tap(findTestObject('Object Repository/Post Product Page/btn_terbitkan'), 0)
 
