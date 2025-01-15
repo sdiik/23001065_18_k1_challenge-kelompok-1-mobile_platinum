@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project>
    <description></description>
-   <name>23001065_18_K1_Challenge Kelompok 1 Mobile_Platinum</name>
+   <name>Mobile_Platinum</name>
    <tag></tag>
    <UUID>83609a50-1b40-4e22-95e3-4fbf1f1ad0d3</UUID>
    <createdVersion>9.3.1</createdVersion>
@@ -10,7 +10,7 @@
    <modifiedEdition>ENTERPRISE</modifiedEdition>
    <modifiedVersion>9.3.2</modifiedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
-   <projectFileLocation>C:\Users\lenovo\23001065_18_k1_challenge-kelompok-1-mobile_platinum\23001065_18_K1_Challenge Kelompok 1 Mobile_Platinum.prj</projectFileLocation>
+   <projectFileLocation>C:\Users\lenovo\mobile_platinum\Mobile_Platinum.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
